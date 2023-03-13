@@ -10,6 +10,8 @@ setMap();
 
 function setMap() {
     for(let i =0 ; i<size; i++){
+        const row = document.createElement("div");
+        row.setAttribute("class", "row");
         for(let j=0; j<size; j++){
             let id = `y${i}x${j}`;
             const item = document.createElement("div");
@@ -25,10 +27,11 @@ function setMap() {
                     turn = turn === 1 ? 2 : 1;
                 }
             });
-            map.append(item);
+            row.append(item);
         }
-        root.append(map);
+        map.append(row);
     }
+    root.append(map);
 }
 
 function checkWinner(){
