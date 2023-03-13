@@ -34,8 +34,7 @@ searchBox.addEventListener("submit", e => {
         },
       })
       .done((response) => {
-        console.log(data.authors);
-
+        
         // container 안에 
         /*
         <div class="result-card">
