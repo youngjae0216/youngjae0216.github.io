@@ -5,12 +5,15 @@
 
 h1{
     text-align: center;
+    font-size: 3em;
+    color: darkolivegreen;
 }
 
 
 .search_box{
     width: fit-content;
     margin: auto;
+
 }
 
 body{
@@ -55,4 +58,8 @@ body{
 }
 a{
   height: 60%;  
+}
+
+.query{
+    
 }
