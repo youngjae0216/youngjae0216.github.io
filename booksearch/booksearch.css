@@ -17,7 +17,7 @@ h1{
 }
 
 body{
-    
+    gap: 10px;
     width: 80%;
     height: 80%;
     margin: auto;
@@ -59,8 +59,11 @@ body{
 a{
   height: 60%;  
 }
-
 .query{
     width: 200px;
     height: 25px;
+}
+.submit{
+    font-size: 1.1em;
+    color: darkgreen;
 }
