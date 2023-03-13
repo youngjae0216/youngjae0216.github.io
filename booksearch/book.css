@@ -13,7 +13,7 @@ h1{
 .search_box{
     width: fit-content;
     margin: auto;
-
+    height: 25px;
 }
 
 body{
@@ -61,5 +61,6 @@ a{
 }
 
 .query{
-    
+    width: 200px;
+    height: 25px;
 }
