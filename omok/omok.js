@@ -1,147 +1,135 @@
-const size = 10;
+const gridContainer = document.querySelector(".grid-container");
+
+let size = 13;
+
+// 바둑판 그리드
+for(let i=0; i<size+1; i++) {
+    for(let j=0; j<size+1; j++) {
+        const gridItem = document.createElement("div");
+
+        gridItem.setAttribute("class", `grid-item`);
+
+        gridContainer.append(gridItem);
+    }
+}
+
+const playContainer = document.querySelector(".play-container");
+
+for(let i=0; i<size; i++) {
+    for(let j=0; j<size; j++) {
+        const playItem = document.createElement("div");
+        const id = `y${i}x${j}`;
+
+        playItem.setAttribute("class", `play-item`);
+        playItem.setAttribute("id", id);
+
+        playContainer.append(playItem);
+    }
+}
+
 let turn = 1;
 let win = 0;
 
-const root = document.querySelector(".root");
-const map = document.createElement("div");
-const line = document.createElement("div");
-map.setAttribute("class", "map");
-line.setAttribute("class", "line");
+marking();
+reset();
 
-setMap();
-
-function setMap() {
-    for(let i =0 ; i<size; i++){
-        const row1 = document.createElement("div");
-        const row2 = document.createElement("div");
-        row1.setAttribute("class", "row1");
-        row2.setAttribute("class", "row2");
-        for(let j=0; j<size; j++){
-            let id = `y${i}x${j}`;
-            const item1 = document.createElement("div");
-            const item2 = document.createElement("div");
-            item1.setAttribute("class", "box");
-            item2.setAttribute("class", "box");
-            item1.setAttribute("id", id);
-            item2.setAttribute("id", id);
-
-            item1.addEventListener("click", e =>{
-                if(item1.innerText === ""){
-                    item1.innerText = (turn === 1 ? "O" : "X");
-
-                    checkWinner();
-                    
-                    turn = turn === 1 ? 2 : 1;
-                }
-            });
-            row1.append(item1);
-            row2.append(item2);
-        }
-        line.append(row1);
-        map.append(row2);
+function marking() {
+    const mark = document.getElementsByClassName("play-item");
+    for(let i=0; i<mark.length; i++) {
+        mark[i].addEventListener("click", e =>{
+            if(e.target.className === "play-item" && win === 0){
+                e.target.setAttribute("class", `P${turn}`);
+                checkWin();
+                turn = turn === 1 ? 2 : 1;
+            }
+        })
     }
-    root.append(map);
-    root.append(line);
 }
 
-function checkWinner(){
-    checkGaro();
-    checkSero();
-    checkDaegak();
-    checkReverse();
+function checkWin() {
+    checkHori();
+    checkVert();
+    checkLeftDiagonal();
+    checkRightDiagonal();
+    if (win !== 0)
+        alert(`P${win} WIN!!!`);
+};
 
-    if(win !== 0){
-        alert(`player${win} WIN ! `);
-    }
-
-
-}
-
-function checkGaro(){
-    for(let i=0; i<size; i++){
+function checkHori() {
+    for(let i=0; i<size; i++) {
         let count = 0;
-        for(let j=0; j<size; j++){
-            const id = `y${i}x${j}`;
-            const box = map.querySelector(`#${id}`);
-            const text = box.innerText;
-            if(text === ( turn === 1 ? "O" : "X")){
-                count++;
-            }
+        for(let j=0; j<size; j++) {
+            const target = `y${i}x${j}`;
+            const id = document.querySelector(`#${target}`);
 
-            if(count >= 5){
+            if(id.className === `P${turn}`)
+                count ++;
+            else
+                count = 0;
+            if(count >= 5)
                 win = turn;
-            }
         }
     }
 }
-function checkSero(){
-    for(let i=0; i<size; i++){
+
+function checkVert() {
+    for(let i=0; i<size; i++) {
         let count = 0;
-        for(let j=0; j<size; j++){
-            const id = `y${j}x${i}`;
-            const box = map.querySelector(`#${id}`);
-            const text = box.innerText;
-            if(text === ( turn === 1 ? "O" : "X")){
-                count++;
-            }
+        for(let j=0; j<size; j++) {
+            const target = `y${j}x${i}`;
+            const id = document.querySelector(`#${target}`);
 
-            if(count >= 5){
+            if(id.className === `P${turn}`)
+                count ++;
+            else
+                count = 0;
+            if(count >= 5)
                 win = turn;
+        }
+    }
+}
+
+function checkLeftDiagonal() {
+    for(let i=0; i<size-4; i++) {
+        for(let j=0; j<size-4; j++) {
+            let count = 0;
+            for(let k=0; k<5; k++) {
+                const target = `y${i+k}x${j+k}`;
+                const id = document.querySelector(`#${target}`);
+    
+                if(id.className === `P${turn}`)
+                    count ++;
+                else
+                    count = 0;
+                if(count >= 5)
+                    win = turn;
             }
         }
     }
 }
-function checkDaegak(){
-    for(let i=0; i<size-4; i++){
-        for(let j=0; j<size-4; j++){
+
+function checkRightDiagonal() {
+    for(let i=0; i<size-4; i++) {
+        for(let j=4; j<size; j++) {
             let count = 0;
-            for(let k=0; k<5;k++){
-                const id = `y${i+k}x${j+k}`;
-                const box = map.querySelector(`#${id}`);
-                const text = box.innerText;
-                if(text === ( turn === 1 ? "O" : "X")){
-                    count++;
-                }
-                
-                if(count >= 5){
+            for(let k=0; k<5; k++) {
+                const target = `y${i+k}x${j-k}`;
+                const id = document.querySelector(`#${target}`);
+    
+                if(id.className === `P${turn}`)
+                    count ++;
+                else
+                    count = 0;
+                if(count >= 5)
                     win = turn;
-                }
-            }
-        }
-    }
-}
-function checkReverse(){
-    for(let i=4; i<size; i++){
-        for(let j=0; j<size-4; j++){
-            let count = 0;
-            for(let k=0; k<5;k++){
-                const id = `y${j+k}x${i-k}`;
-                const box = map.querySelector(`#${id}`);
-                const text = box.innerText;
-                if(text === ( turn === 1 ? "O" : "X")){
-                    count++;
-                }
-                
-                if(count >= 5){
-                    win = turn;
-                }
             }
         }
     }
 }
 
 function reset(){
-    turn = 1;
-    win = 0;
-    location.reload();
+    const reset = document.querySelector(".reset");
+    reset.addEventListener("click", e =>{
+        location.reload();
+    })
 }
-
-const resetBox = document.createElement("div");
-resetBox.setAttribute("class", "reset");
-resetBox.innerText = "RESET";
-resetBox.addEventListener("click", e =>{
-    reset();
-});
-
-const body = document.querySelector("body");
-body.append(resetBox);
