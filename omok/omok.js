@@ -4,34 +4,44 @@ let win = 0;
 
 const root = document.querySelector(".root");
 const map = document.createElement("div");
+const line = document.createElement("div");
 map.setAttribute("class", "map");
+line.setAttribute("class", "line");
 
 setMap();
 
 function setMap() {
     for(let i =0 ; i<size; i++){
-        const row = document.createElement("div");
-        row.setAttribute("class", "row");
+        const row1 = document.createElement("div");
+        const row2 = document.createElement("div");
+        row1.setAttribute("class", "row1");
+        row2.setAttribute("class", "row2");
         for(let j=0; j<size; j++){
             let id = `y${i}x${j}`;
-            const item = document.createElement("div");
-            item.setAttribute("class", "box");
-            item.setAttribute("id", id);
+            const item1 = document.createElement("div");
+            const item2 = document.createElement("div");
+            item1.setAttribute("class", "box");
+            item2.setAttribute("class", "box");
+            item1.setAttribute("id", id);
+            item2.setAttribute("id", id);
 
-            item.addEventListener("click", e =>{
-                if(item.innerText === ""){
-                    item.innerText = (turn === 1 ? "O" : "X");
+            item1.addEventListener("click", e =>{
+                if(item1.innerText === ""){
+                    item1.innerText = (turn === 1 ? "O" : "X");
 
                     checkWinner();
                     
                     turn = turn === 1 ? 2 : 1;
                 }
             });
-            row.append(item);
+            row1.append(item1);
+            row2.append(item2);
         }
-        map.append(row);
+        line.append(row1);
+        map.append(row2);
     }
     root.append(map);
+    root.append(line);
 }
 
 function checkWinner(){
