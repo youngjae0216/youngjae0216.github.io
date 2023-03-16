@@ -119,7 +119,7 @@ const omok = new Project(
 addProject(omok, "frontend", "contain", "center");
 
 const atm = new Project(
-    "atm https://github.com/youngjae0216/atm.git",
+    "/atm https://github.com/youngjae0216/atm.git",
     "/resources/images/bank.jpg",
     "YoungJae BANK",
     "Console ATM (Java mini project)",
