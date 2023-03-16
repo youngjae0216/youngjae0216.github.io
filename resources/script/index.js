@@ -124,7 +124,7 @@ const atm = new Project(
     "YoungJae BANK",
     "Console ATM (Java mini project)",
     ['Java'],
-    ['2023.03.15', "2023.03.16"]
+    ['2023.03.14', "2023.03.15"]
 );
 
 addProject(atm, "backend", "contain", "center");
