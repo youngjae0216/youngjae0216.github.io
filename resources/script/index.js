@@ -117,3 +117,14 @@ const omok = new Project(
 );
 
 addProject(omok, "frontend", "contain", "center");
+
+const atm = new Project(
+    "atm https://github.com/youngjae0216/rpg-game.git",
+    "/resources/images/omok.png",
+    "Youngjae BANK",
+    "Console ATM (Java mini project)",
+    ['Java'],
+    ['2023.03.15', "2023.03.16"]
+);
+
+addProject(atm, "backend", "contain", "center");
