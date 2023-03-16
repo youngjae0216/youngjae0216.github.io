@@ -112,7 +112,7 @@ const omok = new Project(
     "/resources/images/omok.png",
     "Omok",
     "Let's play a fun Omok game!",
-    ['VanilaJS', 'jQeury', 'Kakao Search API'],
+    ['VanilaJS'],
     ['2023.03.11', "2023.03.12"]
 );
 
