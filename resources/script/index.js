@@ -128,3 +128,14 @@ const atm = new Project(
 );
 
 addProject(atm, "backend", "contain", "center");
+
+const rpg_game = new Project(
+    "https://github.com/youngjae0216/rpg-game.git",
+    "/resources/images/rpg.png",
+    "RPG-Game",
+    "Console Rpg-Game (Java mini project)",
+    ['Java'],
+    ['2023.03.18', "2023.03.20"]
+);
+
+addProject(rpg_game, "backend", "contain", "center");
