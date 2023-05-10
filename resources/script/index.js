@@ -139,3 +139,16 @@ const rpg_game = new Project(
 );
 
 addProject(rpg_game, "backend", "contain", "center");
+
+const Intranet = new Project(
+    "http://intranet-service.store/",
+    "/resources/images/intranet.png",
+    "Intranet-Service",
+    "University Academic Management System",
+    ['JSP', 'JSTL', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
+    ['2023.03.18', "2023.03.20"]
+);
+
+addProject(Intranet, "backend", "contain", "center");
+
+// spring boot, spring mvc, spring data(jpa), mysql, kakao api, uploadcare, // 
