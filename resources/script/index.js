@@ -120,7 +120,7 @@ addProject(omok, "frontend", "contain", "center");
 
 const atm = new Project(
     "https://github.com/youngjae0216/atm.git",
-    "/resources/images/bank.jpg",
+    "/resources/images/bank.png",
     "YoungJae BANK",
     "Console ATM (Java mini project)",
     ['Java'],
