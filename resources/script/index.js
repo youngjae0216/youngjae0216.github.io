@@ -146,9 +146,18 @@ const Intranet = new Project(
     "Intranet-Service",
     "University Academic Management System",
     ['JSP', 'JSTL', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
-    ['2023.03.18', "2023.03.20"]
+    ['2023.04.10', "2023.04.24"]
 );
 
 addProject(Intranet, "backend", "contain", "center");
 
-// spring boot, spring mvc, spring data(jpa), mysql, kakao api, uploadcare, // 
+const LaundryGarden = new Project(
+    "http://laundry-garden.store/",
+    "/resources/images/laundrygarden.png",
+    "LaundryGarden(세정원)",
+    "Non-face-to-face Laundry Service",
+    ['spring boot', 'spring mvc', 'spring data(jpa)','kakao api', 'uploadcare', 'JSP', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
+    ['2023.04.27', "2023.05.15"]
+);
+
+addProject(LaundryGarden, "backend", "contain", "center");
