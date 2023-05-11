@@ -127,7 +127,6 @@ const atm = new Project(
     ['2023.03.14', "2023.03.15"]
 );
 
-addProject(atm, "backend", "contain", "center");
 
 const rpg_game = new Project(
     "https://github.com/youngjae0216/rpg-game.git",
@@ -136,28 +135,29 @@ const rpg_game = new Project(
     "Console Rpg-Game (Java mini project)",
     ['Java'],
     ['2023.03.18', "2023.03.20"]
-);
-
-addProject(rpg_game, "backend", "contain", "center");
-
-const Intranet = new Project(
-    "http://intranet-service.store/",
-    "/resources/images/intranet.png",
-    "Intranet-Service",
-    "University Academic Management System",
-    ['JSP', 'JSTL', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
-    ['2023.04.10', "2023.04.24"]
-);
-
-addProject(Intranet, "backend", "contain", "center");
-
-const LaundryGarden = new Project(
-    "http://laundry-garden.store/",
-    "/resources/images/laundrygarden.png",
-    "LaundryGarden(세정원)",
-    "Non-face-to-face Laundry Service",
-    ['spring boot', 'spring mvc', 'spring data(jpa)','kakao api', 'uploadcare', 'JSP', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
-    ['2023.04.27', "2023.05.15"]
-);
-
-addProject(LaundryGarden, "backend", "contain", "center");
+    );
+    
+    
+    const Intranet = new Project(
+        "http://intranet-service.store/",
+        "/resources/images/intranet.png",
+        "Intranet-Service",
+        "University Academic Management System",
+        ['JSP', 'JSTL', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
+        ['2023.04.10', "2023.04.24"]
+        );
+        
+        
+        const LaundryGarden = new Project(
+            "http://laundry-garden.store/",
+            "/resources/images/laundrygarden.png",
+            "LaundryGarden(세정원)",
+            "Non-face-to-face Laundry Service",
+            ['spring boot', 'spring mvc', 'spring data(jpa)','kakao api', 'uploadcare', 'JSP', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
+            ['2023.04.27', "2023.05.15"]
+            );
+            
+            addProject(LaundryGarden, "backend", "contain", "center");
+            addProject(Intranet, "backend", "contain", "center");
+            addProject(atm, "backend", "contain", "center");
+            addProject(rpg_game, "backend", "contain", "center");
