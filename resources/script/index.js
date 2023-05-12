@@ -163,7 +163,7 @@ const RentalProject = new Project(
     "RentalProject",
     "Rent Vehicle Service",
     ['JSP', 'Scriptlet', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
-    ['2023.03.22', "2023.03.29"]
+    ['2023.04.04', "2023.04.10"]
 );
 
 addProject(LaundryGarden, "backend", "contain", "center");
