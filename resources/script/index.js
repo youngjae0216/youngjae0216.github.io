@@ -135,29 +135,39 @@ const rpg_game = new Project(
     "Console Rpg-Game (Java mini project)",
     ['Java'],
     ['2023.03.18', "2023.03.20"]
-    );
+);
     
     
-    const Intranet = new Project(
-        "http://intranet-service.store/",
-        "/resources/images/intranet.png",
-        "Intranet-Service",
-        "University Academic Management System",
-        ['JSP', 'JSTL', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
-        ['2023.04.10', "2023.04.24"]
-        );
+const Intranet = new Project(
+    "http://intranet-service.store/",
+    "/resources/images/intranet.png",
+    "Intranet-Service",
+    "University Academic Management System",
+    ['JSP', 'JSTL', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
+    ['2023.04.10', "2023.04.24"]
+);
         
         
-        const LaundryGarden = new Project(
-            "http://laundry-garden.store/",
-            "/resources/images/laundrygarden.png",
-            "LaundryGarden(세정원)",
-            "Non-face-to-face Laundry Service",
-            ['spring boot', 'spring mvc', 'spring data(jpa)','kakao api', 'uploadcare', 'JSP', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
-            ['2023.04.27', "2023.05.15"]
-            );
-            
-            addProject(LaundryGarden, "backend", "contain", "center");
-            addProject(Intranet, "backend", "contain", "center");
-            addProject(atm, "backend", "contain", "center");
-            addProject(rpg_game, "backend", "contain", "center");
+const LaundryGarden = new Project(
+    "http://laundry-garden.store/",
+    "/resources/images/laundrygarden.png",
+    "LaundryGarden(세정원)",
+    "Non-face-to-face Laundry Service",
+    ['spring boot', 'spring mvc', 'spring data(jpa)','kakao api', 'uploadcare', 'JSP', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
+    ['2023.04.27', "2023.05.15"]
+);
+
+const RentalProject = new Project(
+    "https://github.com/youngjae0216/RentalProject.git",
+    "/resources/images/rentcar.png",
+    "RentalProject",
+    "Rent Vehicle Service",
+    ['JSP', 'Scriptlet', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
+    ['2023.03.22', "2023.03.29"]
+);
+
+addProject(LaundryGarden, "backend", "contain", "center");
+addProject(Intranet, "backend", "contain", "center");
+addProject(atm, "backend", "contain", "center");
+addProject(rpg_game, "backend", "contain", "center");
+addProject(RentalProject, "backend", "contain", "center");
