@@ -149,8 +149,8 @@ const Intranet = new Project(
         
         
 const LaundryGarden = new Project(
-    "http://laundry-garden.store/",
-    "/resources/images/LaundryGarden.png",
+    "http://laundrygarden.store/",
+    "/resources/images/laundrygarden.png",
     "LaundryGarden(세정원)",
     "Non-face-to-face Laundry Service",
     ['spring boot', 'spring mvc', 'spring data(jpa)','kakao api', 'uploadcare', 'JSP', 'Java 11', 'Tomcat 9', 'MySQL', 'jQuery'],
